@@ -15,7 +15,31 @@ var tmpl = ' <li id="ID">' +
            ' </li> ';
 
 $(document).ready(function(){
+    
+    for (var i=0;i<data.length;i++){
+        var x= tmpl.replace("ID",i);
+        x=x.replace("WORD",data[i].word_en);
+        x=x.replace("SOLUTION",data[i].word_de);
+        console.log(x);
+        $(".cards").append(x);
+    }
+    
+    
+    var x= $(".cards").find("#0").addClass("current");
+    x.find(".solution").hide();
+    var current=2;
+    var count=0;
+    $(".btn opt-incorrect").click(function(){
+        console.log("premuto");
+       $(".cards").find("#0").find(".solution").show();
 
+        
+        
+    
+    
+    
+    });
+    
 
 });
 
